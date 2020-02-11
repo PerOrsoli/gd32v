@@ -1,0 +1,16 @@
+# gpio.c:
+llvm-size90 ./build/main.elf
+   text    data     bss     dec     hex filename
+  14936      80     160   15176    3b48 ./build/main.elf
+
+# gpio.cpp
+llvm-size90 ./build/main.elf
+   text    data     bss     dec     hex filename
+  14896      80     160   15136    3b20 ./build/main.elf
+
+wc -l src/gpio_hw.cpp src/gpio-exti.cpp src/gpio.cpp
+     100 src/gpio_hw.cpp
+      35 src/gpio-exti.cpp
+     170 src/gpio.cpp
+     305 total
+

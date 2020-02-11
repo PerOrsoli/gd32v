@@ -1,8 +1,8 @@
 # GD32V
 
-GigaDevice GD32V RISC-V MCU
-Example for Sipeed Longan Nano development board.
-WIP
+GigaDevice GD32V RISC-V MCU  
+Example for Sipeed Longan Nano development board.  
+WIP  
 
 3rd party:
 - init

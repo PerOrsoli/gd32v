@@ -1,0 +1,15 @@
+# 191226
+
+        # find include GCC include path:
+        echo | riscv-nuclei-elf-gcc -E -Wp,-v
+
+        # find libraries search path:
+        riscv-nuclei-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medlow  -print-search-dirs | sed '/^lib/b 1;d;:1;s,/[^/.][^/]*/\.\./,/,;t 1;s,:[^=]*=,:;,;s,;,;  ,g' | tr ':' '\n' | uniq
+
+# copied from PlatformIO GCC:
+cp ~/.platformio/packages/toolchain-gd32v/bin/../lib/gcc/riscv-nuclei-elf/9.2.0/include .
+cp ~/.platformio/packages/toolchain-gd32v/bin/../lib/gcc/riscv-nuclei-elf/9.2.0/include-fixed .
+
+# ls ~/.platformio/packages/toolchain-gd32v/lib/gcc/riscv-nuclei-elf/9.2.0/rv32imac/ilp32/
+#   crtend.o  crti.o  crtn.o  libgcc.a  libgcov.a
+cp ~/.platformio/packages/toolchain-gd32v/lib/gcc/riscv-nuclei-elf/9.2.0/rv32imac/ilp32/* .
